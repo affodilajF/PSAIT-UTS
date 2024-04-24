@@ -56,8 +56,8 @@
                                         echo "<th>No</th>";
                                         echo "<th>Nim</th>";
                                         echo "<th>Name</th>";
-                                        echo "<th>Alamat</th>";
-                                        echo "<th>Tanggal Lahir</th>";
+                                        // echo "<th>Alamat</th>";
+                                        // echo "<th>Tanggal Lahir</th>";
                                         echo "<th>Kode Matakuliah</th>";
                                         echo "<th>Nama Matakuliah</th>";
                                         echo "<th>SKS</th>";
@@ -71,8 +71,8 @@
                                         echo "<td><b>" . ($i + 1) . "</b></td>";
                                         echo "<td> {$json["data"][$i]["nim"]} </td>";
                                         echo "<td> {$json["data"][$i]["nama"]} </td>";
-                                        echo "<td> {$json["data"][$i]["alamat"]} </td>";
-                                        echo "<td> {$json["data"][$i]["tanggal_lahir"]} </td>";
+                                        // echo "<td> {$json["data"][$i]["alamat"]} </td>";
+                                        // echo "<td> {$json["data"][$i]["tanggal_lahir"]} </td>";
                                         echo "<td> {$json["data"][$i]["kode_mk"]} </td>";
                                         echo "<td> {$json["data"][$i]["nama_mk"]} </td>";
                                         echo "<td> {$json["data"][$i]["sks"]} </td>";

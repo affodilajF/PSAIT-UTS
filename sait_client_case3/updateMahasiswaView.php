@@ -15,10 +15,8 @@
 
 <?php
  $nim = $_GET['nim'];
- var_dump($nim);
 
  $kode_mk = $_GET['kode_mk'];
- var_dump($kode_mk);
 
  $curl= curl_init();
  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
