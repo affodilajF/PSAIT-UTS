@@ -31,7 +31,8 @@ CREATE TABLE `mahasiswa` (
   `nim` varchar(10) NOT NULL,
   `nama` varchar(20) DEFAULT NULL,
   `alamat` varchar(40) DEFAULT NULL,
-  `tanggal_lahir` date DEFAULT NULL
+  `tanggal_lahir` date DEFAULT NULL, 
+  PRIMARY KEY (`nim`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -52,7 +53,8 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `alamat`, `tanggal_lahir`) VALUES
 CREATE TABLE `matakuliah` (
   `kode_mk` varchar(10) NOT NULL,
   `nama_mk` varchar(30) DEFAULT NULL,
-  `sks` int(2) DEFAULT NULL
+  `sks` int(2) DEFAULT NULL, 
+  PRIMARY KEY (`kode_mk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -89,11 +91,16 @@ CREATE TABLE `nilai_mahasiswa` (
 --
 
 CREATE TABLE `perkuliahan` (
-  `id_perkuliahan` int(5) NOT NULL,
-  `nim` varchar(10) DEFAULT NULL,
-  `kode_mk` varchar(10) DEFAULT NULL,
-  `nilai` double DEFAULT NULL
+  `id_perkuliahan` INT(5) NOT NULL AUTO_INCREMENT,
+  `nim` VARCHAR(10) DEFAULT NULL,
+  `kode_mk` VARCHAR(10) DEFAULT NULL,
+  `nilai` DOUBLE DEFAULT NULL,
+  PRIMARY KEY (`id_perkuliahan`),
+  CONSTRAINT `fk_perkuliahan_mahasiswa` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`),
+  CONSTRAINT `fk_perkuliahan_matakuliah` FOREIGN KEY (`kode_mk`) REFERENCES `matakuliah` (`kode_mk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 
 --
 -- Dumping data for table `perkuliahan`
